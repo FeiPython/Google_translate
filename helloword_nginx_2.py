@@ -54,19 +54,6 @@ def translate():
         # redis = RedisClient()
         n = 2
         while True:
-            # while True:
-            #     try:
-            #         ip = redis.random()
-            #         if re.match('\d+\.\d*\.\d*\.\d+\:\d*', ip):
-            #             break
-            #         else:
-            #             time.sleep(2)
-            #     except Exception as e:
-            #         print(e)
-            # proxies = {
-            #     "http": 'http://' + ip,
-            #     "https": 'https://' + ip,
-            # }
             user_agent = random.choice(setting.user_agent_list)
             param = {'tk': tk, 'q': content}
             headers = {
@@ -97,12 +84,6 @@ def translate():
                                 except Exception as e:
                                     print(e)
                         if trans:
-                            # if trans == '要么' or trans == '老中国青瓷盖锅':
-                            #     if str(content).replace(' ', '') != '老中国青瓷盖锅' or str(content).replace(' ', '') != 'Oldchineseceladonlidpot' or str(content).replace(' ', '') != 'oldchineseceladonlidpot' or str(content).replace(' ', '') != 'or' or str(content).replace(' ', '') != 'Or' or str(content).replace(' ', '') != '要么':
-                            #         continue
-                            # if trans == '现藏者从上面购得':
-                            #     if str(content).replace(' ', '') != '现藏者从上面购得' or str(content).replace(' ', '') != 'Acquiredfromtheabovebythepresentowner' or str(content).replace(' ', '') != 'acquiredfromtheabovebythepresentowner':
-                            #         continue
                             print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())), trans)
                             print(content)
                             json_dict = {
@@ -141,5 +122,4 @@ def translate():
 
 #4.Flask应用程序实例的run方法,启动WEB服务器
 if __name__ == '__main__':
-    app.run(debug=False, host="10.20.10.77", port=8080)
-    # app.run(debug=True, host="10.10.20.83", port=8080)
+    app.run(debug=False, host="100.100.100.100", port=8080)
